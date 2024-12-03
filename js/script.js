@@ -42,19 +42,41 @@ function playRound(){
 
     if(result ==="user win"){
         userScore = userScore + 1;
-        console.log(userScore);
         return alert("You won! " + usrChoiceWord + " beats "+cpuChoiceWord);
     } else if(result === "computer win"){
         cpuScore = cpuScore + 1;
-        console.log(cpuScore);
         return alert("You lost! " + cpuChoiceWord + " beats "+usrChoiceWord);
     } else if (result === "tie"){
         alert("You tied? Play again!");
         playRound();
     } else if (result == "user error"){
         cpuScore = cpuScore + 1;
-        console.log(cpuScore);
         return alert("You lost! " + cpuChoiceWord + " beats your gibberish");
+    }
+}
+
+function playGame(n){
+    let round = 0;
+    for (let x=0; x<=n-1; x++){
+        round = round + 1;
+        alert("Round "+round);
+        playRound();
+    } 
+    if (round===n){
+        if(userScore>cpuScore){
+            alert(" Final Stats\n Rounds: "+round+"\n Your Wins: "+userScore+"\n Computer Wins: "+cpuScore+"\n Congrats, you won!");
+            userScore=0;
+            cpuScore=0;
+        } else if(userScore<cpuScore){
+            alert(" Final Stats\n Rounds: "+round+"\n Your Wins: "+userScore+"\n Computer Wins: "+cpuScore+"\n Bummer, you lost!");
+            userScore=0;
+            cpuScore=0;
+        } else if(userScore===cpuScore){
+            alert(" Final Stats\n Rounds: "+round+"\n Your Wins: "+userScore+"\n Computer Wins: "+cpuScore+"\n Damn, you two tied!");
+            userScore=0;
+            cpuScore=0;
+        }
+        
     }
 }
 
