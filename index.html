@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 150px;
+            gap: 50px;
+        }
+        button {
+            font-size: 35px;
+            min-width: 200px;
+            min-height: 75px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="container"> 
+        <button id="rock">ROCK</button> 
+        <button id="paper">PAPER</button> 
+        <button id="scissors">SCISSORS</button> 
+    </div>
+    <div>
+        <p class="result"></p>
+    </div>
+
 <script src="./js/script.js"></script>
 </body> 
 </html>
